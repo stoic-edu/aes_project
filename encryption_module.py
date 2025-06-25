@@ -4,7 +4,7 @@ from cryptography.hazmat.backends import default_backend
 import os
 
 def generate_key():
-    return os.urandom(32)
+    return os.urandom(32)  # AES-256
 
 def encrypt_message(key, plaintext):
     iv = os.urandom(16)
@@ -13,7 +13,7 @@ def encrypt_message(key, plaintext):
     cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
     encryptor = cipher.encryptor()
     cipher_text = encryptor.update(padded) + encryptor.finalize()
-    return iv + cipher_text
+    return iv + cipher_text  # Return IV + cipher
 
 def decrypt_message(key, ciphertext):
     iv = ciphertext[:16]

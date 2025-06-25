@@ -2,12 +2,14 @@
 <html>
 <head><title>Decrypt Message</title></head>
 <body>
-    <h2>Decrypt Message</h2>
-    <form method="POST" action="/decrypt">
-        <textarea name="encrypted" placeholder="Paste encrypted text" required></textarea><br>
-        <input type="text" name="otp" placeholder="Paste OTP (Base64 key)" required><br>
+    <h2>🔓 Decrypt a Message</h2>
+    <form method="POST">
+        <textarea name="cipher" placeholder="Paste encrypted message here" rows="4" cols="60" required></textarea><br><br>
+        <input type="text" name="otp" placeholder="Enter OTP key" required><br><br>
         <button type="submit">Decrypt</button>
     </form>
-    <br><a href="/">Go to Encrypt</a>
+    {% if result %}
+        <h3>{{ result }}</h3>
+    {% endif %}
 </body>
 </html>

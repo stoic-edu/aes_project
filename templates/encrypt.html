@@ -2,12 +2,15 @@
 <html>
 <head><title>Encrypt Message</title></head>
 <body>
-    <h2>Encrypt Message</h2>
-    <form method="POST" action="/send">
-        <textarea name="message" placeholder="Enter your message" required></textarea><br>
-        <input type="text" name="phone" placeholder="+254700000000" required><br>
+    <h2>🔐 Encrypt a Message</h2>
+    <form method="POST">
+        <textarea name="message" placeholder="Enter your message" rows="4" cols="40" required></textarea><br><br>
+        <input type="text" name="phone" placeholder="+2547XXXXXXXX" required><br><br>
         <button type="submit">Encrypt and Send OTP</button>
     </form>
-    <br><a href="/decrypt">Go to Decrypt</a>
+    {% if cipher %}
+        <h3>Encrypted Message:</h3>
+        <textarea rows="5" cols="60" readonly>{{ cipher }}</textarea>
+    {% endif %}
 </body>
 </html>
