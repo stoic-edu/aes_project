@@ -4,8 +4,3 @@ africastalking
 cryptography
 gunicorn
 # -------------------------------------------
-# 6. Procfile
-# -------------------------------------------
-web: gunicorn app:app
-
-# ✅ You're fully ready to deploy this AES Flask app!
